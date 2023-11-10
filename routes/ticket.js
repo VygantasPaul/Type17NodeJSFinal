@@ -1,6 +1,13 @@
 import express from 'express';
 const router = express.Router();
-import { ADD_TICKET, ALL_TICKETS, GET_TICKET_ID, BUY_TICKET_TO_USER, REMOVE_TICKET, REMOVE_TICKET_FROM_USER } from '../controller/ticket.js'
+import {
+    ADD_TICKET,
+    ALL_TICKETS,
+    GET_TICKET_ID,
+    BUY_TICKET_TO_USER,
+    REMOVE_TICKET,
+    REMOVE_TICKET_FROM_USER
+} from '../controller/ticket.js'
 import auth from '../middleware/auth.js'
 import authTicket from '../middleware/authTicket.js'
 import validation from '../middleware/validation.js'
@@ -15,6 +22,12 @@ router.get('/', auth, ALL_TICKETS)
 router.post('/:id/buy', auth, BUY_TICKET_TO_USER)
 router.delete('/:id/remove', auth, REMOVE_TICKET_FROM_USER)
 
-export { GET_TICKET_ID, ADD_TICKET, BUY_TICKET_TO_USER, REMOVE_TICKET, REMOVE_TICKET_FROM_USER }
+export {
+    GET_TICKET_ID,
+    ADD_TICKET,
+    BUY_TICKET_TO_USER,
+    REMOVE_TICKET,
+    REMOVE_TICKET_FROM_USER
+}
 export default router;
 
